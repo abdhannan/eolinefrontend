@@ -1,0 +1,351 @@
+/*
+| Organisasi baru styling
+*/
+.gap-30 {
+  height: 32px;
+}
+.gap-50 {
+  height: 50px;
+}
+.gap-100 {
+  height: 100px;
+}
+.cover-new-org {
+  background-color: #ffffff;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px #f4f4f4;
+  padding: 50px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+@media screen and (max-width: 450px) {
+  .cover-new-org {
+    padding: 1px;
+  }
+}
+.img-organisasi {
+  width: 100%;
+}
+.form-org-wrapper {
+  padding: 0 20px;
+}
+.form-org-wrapper .form-control:focus {
+  border-color: #39B54A;
+}
+.list-social-square li a i {
+  background-color: #39B54A;
+  border-radius: 50px;
+  padding: 12px;
+  color: #ffffff;
+}
+.list-social-square li a i:hover {
+  opacity: 0.8;
+}
+input#file {
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background: url('http://archisnapper.com/cloud.png') center center no-repeat #e4e4e4; */
+  background-size: cover;
+}
+/*
+| Ubah organisasi styling
+*/
+.heading-left-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.select-organisasi {
+  float: right;
+  border-color: #39B54A;
+}
+/*
+| Manajemen user styling
+*/
+/* Variable */
+/*
+| Global wrapper style
+*/
+.primary-content {
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#profile-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #F0F1F3;
+}
+#profile-wrapper .bio-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+#profile-wrapper .bio-wrapper .profile-picture {
+  float: left;
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+#profile-wrapper .bio-wrapper .profile-picture .profile-name {
+  clear: both;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid red;
+  padding-left: 10px;
+}
+.img-dinding {
+  width: 100%;
+  height: 220px;
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+}
+.img-dinding:hover .change-dd-text {
+  display: block;
+}
+.img-dinding:hover {
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.change-dd-text {
+  display: none;
+  text-align: center;
+  position: relative;
+  bottom: -150px;
+  color: #39B54A;
+}
+.change-dd-text input {
+  width: 100%;
+  height: 220px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: -190px;
+  background-image: none;
+  background-color: transparent;
+}
+.change-dd-text input:focus {
+  outline: none;
+}
+.detail-profile-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+.detail-profile-wrapper .profile-org {
+  float: left;
+}
+.menu-profile {
+  margin-top: 50px;
+}
+#manage-org-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+#manage-org-wrapper .manage-org-heading {
+  float: left;
+}
+#manage-org-wrapper .btn-add-org {
+  margin-top: 23px;
+  margin-left: 10px;
+}
+.manage-org-wrapper-details {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #f4f4f4;
+  margin-top: 20px;
+}
+.manage-org-wrapper-details .img-org-details {
+  width: 100px;
+  height: auto;
+  float: left;
+}
+.manage-org-wrapper-details .content-org-details {
+  overflow: hidden;
+}
+.manage-org-wrapper-details .content-org-details h3,
+.manage-org-wrapper-details .content-org-details p,
+.manage-org-wrapper-details .content-org-details button,
+.manage-org-wrapper-details .content-org-details a {
+  margin-left: 12px;
+}
+.manage-org-wrapper-details .content-org-details p {
+  border: 2px solid #eeeeee;
+  border-radius: 50px;
+  float: left;
+}
+@media screen and (max-width: 320px) {
+  .content-org-details {
+    float: left;
+  }
+}
+.nyala {
+  border-bottom: 2px solid #39B54A;
+  transition: width 2s;
+}
+/*
+| Profil styling
+*/
+#profil-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+#profil-wrapper .manage-org-heading {
+  float: left;
+}
+#profil-wrapper .btn-add-org {
+  margin-top: 23px;
+  margin-left: 10px;
+}
+#profil-wrapper .primary-content {
+  padding-top: 0px;
+}
+#profil-wrapper .primary-content .profil-details {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #f4f4f4;
+  padding: 0 12px 12px 12px;
+}
+#profil-wrapper .primary-content .profil-details .profil-details-heading {
+  border-bottom: 1px solid #39B54A;
+}
+#profil-wrapper .primary-content .profil-details .profil-details-heading h3 {
+  font-size: 18px;
+  line-height: 10px;
+}
+/*
+| Styling acara
+*/
+#acara-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+.acara-content-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #f4f4f4;
+}
+.acara-content-wrapper .img-content {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+.acara-content-wrapper .img-content span {
+  background-color: #39B54A;
+  padding: 5px;
+  color: #ffffff;
+  position: absolute;
+}
+.acara-content-wrapper .content-acara {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+}
+/* custom tab botstrap */
+.nav-tabs {
+  border-bottom: 1px solid #39B54A !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: 1px solid #39B54A !important;
+  border-bottom-color: transparent!important;
+}
+/*
+| Styling acara details
+*/
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+#acara-details-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+#acara-details-wrapper .bg-acara-details {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: 200px;
+  padding-top: 200px;
+  position: relative;
+}
+#acara-details-wrapper .bg-acara-details .heading-acara-details {
+  color: #ffffff;
+}
+#acara-details-wrapper .bg-acara-details p {
+  color: #ffffff;
+}
+#acara-details-wrapper .bg-acara-details .wrapper-blue {
+  width: 100%;
+  height: auto;
+  background-color: #39B54A;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0 2px 0;
+}
+#acara-details-wrapper .bg-acara-details .wrapper-blue .price-wrapper {
+  float: left;
+}
+#acara-details-wrapper .bg-acara-details .wrapper-blue .price-wrapper span {
+  color: #ffffff;
+}
+#acara-details-wrapper .bg-acara-details .wrapper-blue .price-wrapper p {
+  font-size: 18px;
+}
+#acara-details-wrapper .bg-acara-details .wrapper-blue .btn-wrapper {
+  float: right;
+}
+#acara-details-wrapper .primary-content-details {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #f4f4f4;
+  padding: 40px 15px 15px 15px;
+}
+.pembicara-wrapper {
+  width: 100%;
+}
+.pembicara-wrapper .desc-pembicara {
+  width: 93%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(57, 181, 74, 0.7);
+  padding: 10px;
+  color: #ffffff;
+  border-top: 1px solid #f4f4f4;
+}
+.sponsors-wrapper {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,69 @@
+/*
+| Organisasi baru styling
+*/
+
+@base: #39B54A;
+
+.gap-30{
+	height: 32px;
+}
+.gap-50{
+	height: 50px;
+}
+.gap-100{
+	height: 100px;
+}
+
+.cover-new-org{
+	background-color: #ffffff; 
+	width: 80%; 
+	height: auto; 
+	margin: 0 auto; 
+	box-shadow: 1px 1px 5px #f4f4f4; 
+	padding: 50px; 
+	border-radius: 3px; 
+	overflow: hidden;
+}
+@media screen and (max-width: 450px){
+	.cover-new-org{
+		padding:1px;
+	}
+}
+.img-organisasi{
+	width: 100%;
+}
+.form-org-wrapper{
+	padding: 0 20px;
+
+		.form-control:focus{
+		border-color: @base;
+	}
+}
+
+.list-social-square li a i{
+	background-color: @base;
+	border-radius: 50px;
+	padding:12px;
+	color: #ffffff;
+
+	&:hover{
+		opacity:0.8;
+	}
+}
+
+
+
+
+input#file {
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background: url('http://archisnapper.com/cloud.png') center center no-repeat #e4e4e4; */
+  
+  background-size: cover;
+}

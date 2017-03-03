@@ -1,0 +1,47 @@
+/*variable color*/
+/*-footer color-*/
+/*-table striped color-*/
+/*variable breakpoint*/
+body section#jumbo-section {
+  background: url("../../../images/browse-event-jumbo@2x.png") center bottom;
+  background-color: #39B54A;
+  background-size: cover;
+  padding-top: 110px;
+  padding-bottom: 20px;
+}
+
+body section#jumbo-section .white-pane {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 0 transparent;
+  -o-box-shadow: 0 0 0 transparent;
+  -ms-box-shadow: 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+}
+
+body section#jumbo-section input, body section#jumbo-section select {
+  border: none;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body section#jumbo-section .input-chips {
+  border: 1px solid #21672a;
+  padding: 12px 8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+
+body section#jumbo-section .input-chips p {
+  color: #ffffff;
+}
+
+body section#section-event {
+  margin-bottom: 60px;
+  margin-top: 30px;
+}

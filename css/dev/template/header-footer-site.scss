@@ -1,0 +1,269 @@
+@import "../partials/_variable.scss";
+@import "../partials/_mixin.scss"; 
+@import "../partials/_helper.scss"; 
+@import "../partials/_components.scss";  
+
+
+body {
+    color: $deepGrey; 
+    width: 100%; 
+    overflow-x: hidden;
+
+    .nav-title {
+        font-size: 24px;
+        height: inherit;
+        padding-top: 18px;
+        display: inline-block;
+        float: left;
+        color: $white;
+        opacity: 1;
+        font-weight: 300;
+        @include transition();
+        @include boxsizing(border-box);
+
+        img.logo-brand {
+            width: 120px; 
+            position: relative;
+            top: -7px;
+            height: auto;
+        }
+
+        &:hover {
+            color: $white;
+            opacity:  0.8;
+            @include transition();
+        }
+    }
+
+    nav#nav-primary {
+        background: transparent;
+        height: 70px;
+        position: fixed;
+        display: block;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 20;
+        @include boxshadowcard(0, 0, 0, rgba(0,0,0,0));
+        @include transition();
+
+        &.scrolled {
+            background: $primary-color;
+            color: $deepGrey;
+            @include boxshadowcard(0, 3px, 6px, rgba(0,0,0,.16));
+            @include transition();
+
+            .nav-right-wrapper {
+
+                .nav-right {
+                    a,span {
+                        color: $deepGrey;
+                        
+                        &.active {
+                            color: $accent-color;
+                        }
+                    }
+                    
+                    .btnhollow {
+                        color: $deepGrey; 
+                        border-color: $deepGrey;
+                    }
+                }
+            }
+        }
+
+        .nav-right-wrapper {
+            float: right;
+
+            .nav-right {
+                clear: both;
+                height: auto;
+                display: block;
+                color: $deepGrey;
+
+                span.caret {
+                    position: relative;
+                    top: -2px;
+                    color: $divider-color;
+                }
+
+                a,span {
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                
+                .dropdown-nav {
+                    .dropdown-nav-child {
+                        padding: 8px;
+                        
+                        li {
+                            margin: 0;
+                            
+                            a {
+                                color: $deepGrey;
+                                @include transition();
+                                
+                                &:hover {
+                                    color: $deepBlack;
+                                    @include transition();
+                                }
+                            }
+                        }
+                    }
+                }
+
+                >li {
+                    list-style: none;
+                    float: left;
+                    position: relative;
+
+                    a,span {
+                        &.active {
+                            color: $accent-color;
+                        }
+                    }
+
+                    &:not(:last-child) {
+                        a,>span {
+                            margin-right: 30px;
+
+                        }
+                    }
+
+                    .btnhollow {
+                        color: $white; 
+                        border-color: $white;
+                        margin-top: 19px;
+                    }
+
+                    .button:not(.btnhollow){
+                        color: $white;
+                        margin-top: 19px;
+                    }
+
+                    >a:not(.button),>span, {
+                        display: inline-block;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        font-size: 14px;
+                        padding: 25px 0;
+                        opacity: 0.8;
+                        @include transition();
+                    }
+
+                    .btnhollow {
+                        opacity: 0.8;
+                        @include transition();
+                        @include boxsizing(border-box);
+
+                        &:hover {
+                            opacity: 1;
+                            @include transition();
+                        }
+                    }
+
+                    &:hover {
+                        >a:not(.button),>span {
+                            opacity: 1;
+                            @include transition();
+                        }
+                        @include transition();
+
+                        ul {
+                            opacity: 1;
+                            visibility: visible;
+                            @include transition();
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        margin: 0;
+                        opacity: 0;
+                        padding: 15px;
+                        top: 60px;
+                        /*bottom: -95px;*/
+                        z-index: 9;
+                        background: $white;
+                        visibility: hidden;
+                        @include transition();
+                        @include boxshadowcard(0, 3px, 6px, rgba(0,0,0,.16));
+                        @include borderbtn(3px);
+
+                        li {
+                            list-style: none;
+
+                            &:not(:last-child) {
+                                margin-bottom: 10px;
+                            }
+
+                            a {
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer#main-footer {
+        background: $footer-back;
+        padding-top: 25px;
+
+        .row-info {
+            margin-bottom: 100px;
+        }
+
+        .nav-title {
+            padding-top: 0;
+            float: none;
+        }
+
+        .head-row {
+            color: $dark-title;
+            font-size: 18px; 
+        }
+
+        .list-menu {
+
+            li {
+                margin-bottom: 12px;
+                color: $light-title;
+                font-size: 16px;
+                font-weight: 300;
+
+                a,span {
+                    color: $light-title;
+                    font-size: 16px;
+                    font-weight: 300;
+                    @include transition();
+                }
+                
+                a:hover {
+                    color: $accent-color;
+                    @include transition();
+                }
+            }
+        }
+
+        .footer-mark {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 1px solid $footer-border;
+
+            .copyright {
+                color: $dark-title;
+                margin: 0;
+            }
+        }
+    }
+
+    footer#footer-simp {
+        padding-bottom: 30px;
+    }
+}

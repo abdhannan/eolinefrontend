@@ -1,0 +1,23 @@
+/*variable color*/
+/*-footer color-*/
+/*-table striped color-*/
+/*variable breakpoint*/
+body section#login-content {
+  padding-top: 120px;
+  margin-bottom: 80px;
+  /*        .btn-group-justified {
+            .btn-group:first-child {
+                button {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+            .btn-group:nth-child(2) {
+                button {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    border-left: 0px solid transparent;
+                }
+            }
+        }*/
+}

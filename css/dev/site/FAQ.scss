@@ -1,0 +1,42 @@
+@import "../partials/_variable.scss";
+@import "../partials/_mixin.scss"; 
+
+
+body {
+
+    p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        letter-spacing: 0.4px;
+
+        b {
+            font-weight: 700;
+        }
+    }
+
+    ol {
+        font-size: 16px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    li {
+        p {
+            margin-bottom: 10px;
+        }
+    }
+    
+    .answer-usual {
+        margin-top: 10px;
+    }
+    
+    section {
+        padding-top: 70px;
+    }
+
+    .border-top-title {
+        margin-bottom: 9px;
+    }
+}

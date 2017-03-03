@@ -1,0 +1,88 @@
+@import "../partials/_variable.scss";
+@import "../partials/_mixin.scss"; 
+
+body {
+
+    section#jumbo-blue {
+        background: url('../../../images/signup-back@2x.png') bottom center fixed;
+        background-size: cover;
+        padding: 90px 40px 40px 40px;
+
+        .title-jumbo {
+            font-size: 28px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .signup-step-wrapper {
+            width: 530px;
+            min-height: 110px;
+            margin-left: auto;
+            margin-right: auto;
+            clear: both;
+            overflow: hidden;
+            @include borderbtn(5px);
+
+            [class*="-step"] {
+                padding: 10px;
+                display: inline-block;
+                width: 50%;
+                min-height: inherit;
+                background: lighten($primary-color, 5%);
+                float: left;
+                color: rgba(255, 255, 255, 0.5);
+                @include transition();
+
+                &.current-step {
+                    background: $white;
+                    color: $grey;
+                    @include transition();
+
+                    img {
+                        opacity: 1;
+                        @include transition();
+                    }
+                }
+
+                img {
+                    opacity: 0.5;
+                    margin-top: 10px;
+                    width: 39px;
+                    height: 39px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    @include transition();
+                }
+            }
+        }
+    }
+    
+    
+    #alert-wrapper {
+        margin: 20px 0; 
+        
+        .alert {
+            margin-bottom: 0;
+        }
+    }
+    
+    section#form-content {
+        margin-bottom: 80px;
+        
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 6px;
+            margin-right: 5px;
+        }
+        
+        #form-sign-in-wrapper {
+            position: relative;
+            top: -35px;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+/*variable color*/
+/*-footer color-*/
+/*-table striped color-*/
+/*variable breakpoint*/
+body section#jumbo-blue {
+  background: url("../../../images/signup-back@2x.png") bottom center fixed;
+  background-size: cover;
+  padding: 90px 40px 40px 40px;
+}
+
+body section#jumbo-blue .title-jumbo {
+  font-size: 28px;
+}
+
+body section#jumbo-blue .tagline {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+body section#jumbo-blue .signup-step-wrapper {
+  width: 530px;
+  min-height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+body section#jumbo-blue .signup-step-wrapper [class*="-step"] {
+  padding: 10px;
+  display: inline-block;
+  width: 50%;
+  min-height: inherit;
+  background: white;
+  float: left;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body section#jumbo-blue .signup-step-wrapper [class*="-step"].current-step {
+  background: #ffffff;
+  color: #848484;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body section#jumbo-blue .signup-step-wrapper [class*="-step"].current-step img {
+  opacity: 1;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body section#jumbo-blue .signup-step-wrapper [class*="-step"] img {
+  opacity: 0.5;
+  margin-top: 10px;
+  width: 39px;
+  height: 39px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body #alert-wrapper {
+  margin: 20px 0;
+}
+
+body #alert-wrapper .alert {
+  margin-bottom: 0;
+}
+
+body section#form-content {
+  margin-bottom: 80px;
+}
+
+body section#form-content input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
+}
+
+body section#form-content #form-sign-in-wrapper {
+  position: relative;
+  top: -35px;
+}

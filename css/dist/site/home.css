@@ -1,0 +1,47 @@
+/*variable color*/
+/*-footer color-*/
+/*-table striped color-*/
+/*variable breakpoint*/
+body section#hero-image {
+  position: relative;
+}
+
+body section#hero-image #main-slide {
+  position: relative;
+}
+
+body section#hero-image #main-slide .carousel-caption {
+  position: absolute;
+  top: 160px;
+}
+
+body section#hero-image #main-slide .carousel-caption .white-pane {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 0 transparent;
+  -o-box-shadow: 0 0 0 transparent;
+  -ms-box-shadow: 0 0 0 transparent;
+  -moz-box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 transparent;
+}
+
+body section#hero-image .tagline {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+body section#hero-image input, body section#hero-image select {
+  border: none;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+body section#hero-image input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
+}

@@ -1,0 +1,43 @@
+@import "../partials/_variable.scss";
+@import "../partials/_mixin.scss"; 
+
+
+body {
+
+    section#hero-image {
+        position: relative;
+        
+        #main-slide { 
+            position: relative;
+            
+            .carousel-caption {
+                position: absolute;
+                top: 160px;
+                
+                .white-pane {
+                    border: 1px solid rgba(0,0,0,.8);
+                    background: rgba(0,0,0,.6);
+                    @include boxshadowcard(0,0,0,rgba(0,0,0,0));
+                }
+            }
+        }
+
+        .tagline {
+            font-size: 36px;
+            line-height: 46px;
+        }
+
+        input,select {
+            border: none;
+            @include transition();
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 6px;
+            margin-right: 5px;
+        }
+    }
+}

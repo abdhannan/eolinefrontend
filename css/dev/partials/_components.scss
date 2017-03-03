@@ -1,0 +1,1469 @@
+
+@import "_variable.scss";
+@import "_mixin.scss"; 
+
+
+/*----native components---*/
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: $deepGrey;
+    background: $background;
+
+    *::selection {
+        background: $deepGrey;
+        color: $white;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+/*-input text-*/
+
+input[type="text"],input[type="email"],
+input[type="search"],input[type="number"],input[type="date"],input[type="password"],select,textarea {
+    background-color: $white;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    color: $deepGrey;
+    font-size: 14px;
+    height: 34px; 
+    border: 1px solid $border;
+    letter-spacing: 0.3px;
+    @include borderbtn(3px);
+    @include boxsizing(border-box);
+    @include transition();    
+    @include boxshadowcard(0px, 1px, 2px, rgba(0,0,0,.1));
+
+    &:focus {
+        outline: none;
+        border: 1px solid transaparent;
+        @include transition();  
+        @include boxshadowcard(0px, 4px, 4px, rgba(0,0,0,.1));
+    }
+
+    &.input-stretch {
+        width: 100%;
+    }
+
+
+}
+
+input[type="checkbox"] {
+    &.check-mid {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+textarea {
+    min-height: 120px;
+}
+
+
+/*-text-*/
+
+a{
+    color: $deepGrey;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: inherit;
+    text-decoration: none;
+    @include transition();
+
+    &:not(.button):hover, &:not(.button):focus {
+        color: $accent-color;
+        @include transition(); 
+    }
+
+    &:hover, &:focus {
+        text-decoration: none;
+        @include transition();
+    }
+}
+
+label {
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    font-size: 14px;
+    color: $deepGrey;
+}
+
+p {
+    letter-spacing: 0.4px;
+    font-weight: 400;
+}
+
+/*-button-*/
+
+button[disabled] {
+    background: lighten($grey, 30%);
+    cursor: not-allowed;
+    color: $grey;
+
+    &:hover {
+        cursor: not-allowed; 
+    }
+}
+
+
+.btndisabled {
+    border: 0;
+    padding: 6px 14px;
+    letter-spacing: 0.5px;
+    @include borderbtn(3px);
+    position: relative;
+    top: 0;
+    background: $whiteGrain;
+    color: $grey;
+
+    &:hover,&:focus{
+        color: $grey !important;
+        cursor: not-allowed;
+    }
+}
+
+.button:not(.btndisabled) {
+    padding: 6px 14px;
+    letter-spacing: 0.6px;
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    top: 0;
+    line-height: inherit;
+    text-transform: uppercase;
+    @include borderbtn(2px);
+    @include transition();
+    @include boxshadowcard(0px, 3px, 6px, rgba(0,0,0,.16));
+
+    &.no-shadow {
+        @include boxshadowcard(0, 0, 0, rgba(0,0,0,0));
+    }
+
+    &.small-shadow {
+        @include boxshadowcard(0px, 2px, 3px, rgba(0,0,0,.1));
+    }
+
+    &:focus {
+        position: relative;
+        bottom: -2px;
+        outline: none;
+        @include boxsizing(border-box);
+        @include transition();  
+        @include boxshadowcard(0px, 1px, 3px, rgba(0,0,0,.1));
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.h-34 {
+        height: 34px;
+    }
+
+    &.btn-mini {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    &.btn-big {
+        padding: 10px 20px;
+        font-size: 32px;
+    }
+
+    &.btn-mid {
+        padding: 10px 28px !important;
+    }
+
+    &.btnhollow {
+        background: transparent;
+        padding: 5px 14px;
+        opacity: 0.8;
+        @include transition();
+
+        &.dark {
+            border: 1px solid $deepGrey;
+            color: $deepGrey;
+        }
+
+        &.light {
+            border: 1px solid $white;
+            color: $white;
+        }
+
+        &:hover {
+            opacity: 1;
+            @include transition();
+        }
+    }
+
+    &.btntrans {
+        background: transparent;
+    }
+
+    &.btnaccent {
+        background: $accent-color;
+        color: $white;
+    }
+
+    &.btnprim {
+        background: $primary-color;
+        color: $white;
+    }
+
+    &.btnwhite {
+        background: $white;
+        color: $deepGrey;
+    }
+
+    &.btndef {
+        background: $whiteSmoke;
+        color: $deepGrey;
+    }
+
+    &.btnblack {
+        background: $deepBlack;
+        color: $white;
+    }
+
+    &.btn-wide {
+        width: 100%;
+        display: block !important;
+
+        &.wide-h-40 {
+            height: 40px !important;
+        }
+
+        &.wide-h-47 {
+            height: 47px !important;
+        }
+    }
+}
+
+/*-table-*/
+
+table.table-theme {
+
+    thead {
+        tr {
+            @include borderpartial(3px, 0, 0, 3px);
+            @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+            background: $white;
+
+            th {
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                color: $deepGrey;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth(odd) {
+                background: $stripedOdd;
+            }
+
+            &:nth(even) {
+                background: $stripedEven;
+            }
+
+            td {
+                font-weight: 400;
+                letter-spacing: 0.4px;
+                color: $deepGrey;
+            }
+        }
+    }
+}
+
+/*-checkbox-*/
+
+.checkbox-app {
+
+    input[type="checkbox"]{
+        display: none;
+    }
+
+    label{
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        left: 20px;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            position: absolute;
+            left: -20px;
+            top: 0.9px;
+            bottom: 1px;
+            background-color: lighten($whitePure, 1%);
+            @include boxshadowcard__inset(0px, 0px, 5px, darken($whiteGrain, 20%));
+            @include borderbtn(3px);
+        }
+    }
+
+    input[type=checkbox]:checked + label:before {
+        content:"\e013";
+        font-family: 'Glyphicons Halflings';
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+        font-size: 12px;
+        font-weight: bold;
+        color: $white;
+        text-align: center;
+        line-height: 15px;
+        background-color: $primary-color;
+    }
+}
+
+/*-radio-*/
+
+.radio-app {
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label{
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        left: 20px;
+    }
+
+    input[type=radio]:checked + label:before {
+        content: "\2022";
+        color: $primary-color;
+        font-size: 30px;
+        font-weight: bold;
+        color: $white;
+        text-align: center;
+        line-height: 15px;
+        background-color: $primary-color;
+    }
+}
+
+/*----custom components---*/
+
+/*-dropdown-nav-*/
+
+.dropdown-nav {
+    position: relative;
+    @include transition();
+
+    &:hover {
+        color: $accent-color;
+        @include transition();
+    }
+
+    &.active {
+        ul.dropdown-nav-child { 
+            display: inline-block;
+            opacity: 1;
+            @include transition();
+        }
+    }
+
+    ul.dropdown-nav-child {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        width: auto;
+        padding: 0;
+        background: $whiteMilk;
+        padding: 8px;
+        @include borderbtn(2px);
+        @include boxshadowcard(0px, 4px, 4px, rgba(0,0,0,.1));
+        @include transition();
+
+        &.drop-right {
+            right: 0;
+        }
+
+        &.drop-left {
+            left: 0;
+        }
+
+        li {
+            list-style: none;
+
+            a {
+                display: block;
+                padding: 5px 10px 5px 10px;
+                font-weight: 400;
+                font-size: 14px;
+                white-space: nowrap;
+                @include transition();
+
+                &:hover {
+                    color: $accent-color;
+                    @include transition();
+                }
+            }
+        }
+    }
+}
+
+.rating-wrapper {
+    .glyphicon-star {
+        font-size: 30px;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+
+
+
+
+/*--view component (directly effect section on the view)--*/
+
+/*-card for displaying in second step signup-*/
+.card-colleague {
+    position: relative;
+    padding: 15px;
+    min-height: 145px;
+    background: $white;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .glyphicon-ok {
+        font-size: 20px;
+        @include transition();
+    }
+
+    .image-colleage {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        overflow: hidden;
+        @include borderbtn(50%);
+
+        img {
+            width: 73px;
+            height: 73px;
+        }
+    }
+
+    .colleague-info {
+        padding-left: 88px;
+    }
+}
+
+
+.card-order {
+    background: $white;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .header-order {
+        padding: 15px 15px 0 15px;
+    }
+
+    .tags-wrapper {
+        padding:  0 15px 15px 15px;
+    }
+
+    .image-order-wrapper {
+        height: 230px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        background-position: center center;
+        background-size: cover;
+
+        img {
+            height: 100%;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .price-order {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            padding: 6px 10px;
+            font-size: 16px;
+            background: rgba(255,255,255,.96);
+            @include borderbtn(3px);
+        }
+    }
+
+    .footer-order-wrapper {
+        padding: 15px;
+
+        .price-order {
+            font-size: 18px;
+            font-weight: 400;
+            color: $accent-color;
+            @include borderbtn(3px);
+        }
+
+        .order-description {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: helvetica, arial, sans-serif;
+            color: $grey;
+            margin-bottom: 20px;
+        }
+
+        .order-bidders {
+            font-size: 16px;
+            font-weight: 400;
+            color: $primary-color;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+
+.card-order__detail {
+    background: $whiteMilk;
+    overflow: hidden;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .header-order {
+        clear: both;
+        padding: 20px;
+        background: $white;
+
+        img {
+            width: 60px;
+            height: 60px;
+            float: left;
+        }
+
+        .text-header-wrapper {
+            padding-left: 75px;
+            padding-top: 10px;
+
+            .order-name {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            .order-due {
+                font-size: 12px;
+                font-weight: 300;
+                color: $grey;
+                margin-bottom: 0;
+            }
+        }
+        .badge-status {
+            background: $whiteMilk;
+            color: $primary-color;
+            font-weight: 400;
+            padding: 6px 20px;
+            @include boxsizing(border-box);
+            @include borderbtn(3px);
+            @include boxshadowcard(0px, 1px, 1px, rgba(0,0,0,.1));
+        }
+    }
+
+    .content-order-wrapper {
+        padding: 20px;
+    }
+
+    .footer-order-wrapper {
+        padding: 15px;
+
+        .order-description {
+            font-size: 14px;
+            font-weight: 400;
+            color: $grey;
+            margin-bottom: 20px;
+        }
+
+        .order-bidders {
+            font-size: 16px;
+            font-weight: 400;
+            color: $primary-color;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.card-profile {
+    padding: 20px 20px 10px 20px;
+    background: $white;
+    border: 1px solid lighten($grey, 35%);
+    overflow: hidden;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .header-profile {
+        background: $primary-color;
+        padding: 15px 20px;
+        margin: -20px -20px 20px -20px;
+        color: $white;
+
+        #first-text {
+            font-size: 16px;
+        }
+    }
+
+    ul {
+        margin: 0 -20px;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: block;
+            border-left: 4px solid transparent;
+
+            &.active {
+                border-left: 4px solid $primary-color;
+
+                a {
+                    color: $primary-color;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 6px 0 6px 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+.white-pane__bidder {
+    background: $white;
+    border: 1px solid lighten($grey, 35%);
+    overflow: hidden;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+
+    .header-pane {
+        padding: 15px;
+
+    }
+
+    .body-pane {
+        padding: 15px;
+        border-top: 1px solid $whiteGrain;
+        background: $whiteMilk;
+    }
+}
+
+
+
+.search-wrapper {
+    position: relative;
+
+    .glyphicon-search {
+        top: 10px;
+        position: absolute;
+        right: 25px;
+    }
+}
+
+/*-header text-*/
+.header-text {
+    color: $deepGrey;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 38px;
+}
+
+.underline-header {
+    display: block;
+    height: 0;
+    width: 50px;
+    border-bottom: 4px solid $accent-color;
+    margin: 0 0 30px 0;
+}
+
+.underline-header-center {
+    display: block;
+    height: 0;
+    width: 60px;
+    border-bottom: 3px solid $accent-color;
+    margin: 0 auto 30px auto;
+}
+
+
+.header-text-white {
+    color: $white;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 38px;
+}
+
+.underline-header-white {
+    display: block;
+    height: 0;
+    width: 50px;
+    border-bottom: 4px solid $white;
+    margin: 0 auto 30px auto;
+}
+
+.no-bullets {
+    padding-left: 0;
+
+    li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+}
+
+.word-straight {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.service-thumbs {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+
+    .caption-service-wrapper {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.2);
+        @include transition();
+
+        &:hover {
+            background: rgba(0,0,0,.5);
+            @include transition();
+
+            .caption-service {
+                margin-top: 25%;
+                @include transition();
+
+                .desc-caption {
+                    opacity: 1;
+                    @include transition();
+                }
+            }
+        }
+
+        .caption-service {
+            margin-top: 30%;
+            @include transition();
+
+            .header-caption {
+                color: $white;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .desc-caption {
+                font-family: helvetica, arial, sans-serif;
+                color: $white;
+                text-align: center;
+                font-weight: 300;
+                font-size: 14px;
+                opacity: 0;
+                @include transition();
+            }
+        }
+    }
+
+    img {
+        position: relative;
+    }
+}
+
+/*--end--*/
+
+
+/*--------------------------------------------------------------------*/
+
+
+/*-button group-*/
+.btn-group {
+    button {
+        border: 1px solid $border;
+        @include boxshadowcard(0px, 1px, 2px, rgba(0,0,0,.1));
+
+        &:focus {
+            position: static;
+            top: 0;
+            outline: none;
+        }
+    }
+}
+
+/*-panel-*/
+
+.white-pane {
+    padding: 15px;
+    background: $white;
+    margin-bottom: 20px;
+    border: 0px solid transparent;
+    @include borderbtn(3px);
+    @include transition(border 200ms ease-in);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    &.nopadd {
+        padding: 0;
+    }
+
+    .header-pane {
+
+        .title-pane {
+            font-weight: 300;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            color: $deepGrey;
+            text-transform: capitalize;
+        }
+    }
+
+    .body-pane {
+        padding-top: 15px;
+
+        .list-pane {
+            &:not(:last-child) {
+                border-bottom: 1px solid $separation;
+            }
+        }
+    }
+}
+
+/*-card-view-*/
+
+.card-view {
+    background: $white;
+    clear: both;
+    overflow: hidden;
+    min-height: 140px;
+    position: relative;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .card-image-wrapper {
+        width: 165px;
+        min-height: inherit;
+        overflow: hidden;
+        position: absolute;
+
+        img {
+            height: 180px;
+            width: auto;
+            z-index: 1;
+        }
+
+        .overlay-card {
+            background: rgba(0,0,0,.5);
+            height: inherit;
+        }
+    }
+
+    .text-card-wrapper {
+        padding: 15px 15px 15px 180px;
+        position: relative;
+
+        .date-held {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        .title-view {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+}
+
+.card-view__offer {
+    background: $white;
+    clear: both;
+    overflow: hidden;
+    min-height: 180px;
+    position: relative;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .card-image-wrapper {
+        width: 165px;
+        min-height: inherit;
+        overflow: hidden;
+        position: absolute;
+
+        img {
+            height: 190px;
+            width: auto;
+            z-index: 1;
+        }
+
+        .overlay-card {
+            background: rgba(0,0,0,.5);
+            height: inherit;
+        }
+    }
+
+    .text-card-wrapper {
+        padding: 15px 15px 15px 180px;
+        position: relative;
+
+        .date-held {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        .title-view {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+}
+
+
+/*-card-notify-*/
+
+.card-notify {
+    background: $deepGrey;
+    @include borderbtn(3px);
+    overflow: hidden;
+    font-weight: 500;
+    text-transform: capitalize;
+    min-height: 65px;
+    clear: both;
+
+    .notify-text {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        color: $white;
+        float: left;
+        width: 65%;
+        height: inherit;
+    }
+
+    .notify-count {
+        color: $deepGrey;
+        background: $accent-color;
+        display: table-cell;
+        vertical-align: middle;
+        height: inherit;
+        text-align: center;
+        float: right;
+        width: 35%;
+    }
+}
+
+/*-card-accordion-*/
+
+.card-accordion {
+    background: $white;
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+    @include borderbtn(3px);
+    overflow: hidden;
+
+    .accordion-list {
+        color: $deepGrey;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        padding: 15px;
+    }
+
+    .accordion-child {
+        background: $stripedOdd;
+        padding: 15px;
+    }
+
+}
+
+/*-card-search-*/
+
+.card-search {
+    background: $white;
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+    @include borderbtn(3px);
+    padding: 0 15px;
+
+    input {
+        background: transparent;
+        height: inherit;
+        width: 100%;
+
+        &:focus {
+            @include boxshadowcard(0,0,0,rgba(0,0,0,0));
+        }
+    }
+}
+
+.wide-pane {
+    background: $white;
+    overflow: hidden;
+    @include borderbtn(3px);
+    @include boxshadowcard(0, 2px, 3px, lighten($grey, 35%));
+
+    .header-wide {
+        padding: 15px;
+        border-bottom: 1px solid lighten($grey, 40%);
+
+        .title-wide {
+            margin-top: 0;
+            margin-bottom: 0;
+            display: inline-block;
+        }
+    }
+
+    .content-wide {
+        padding: 15px;
+        background: $whiteMilk;
+    }
+}
+
+/*-flat board-*/ 
+
+.flat-board {     
+    background: $whiteMilk;
+    color: $deepGrey;
+    padding: 20px 15px 0 15px;
+    clear: both;
+
+    .title-page {
+        font-size: 26px;
+        font-weight: 300;
+        margin-bottom: 0;
+        display: block;
+    }
+
+    .bread-page {
+        font-size: 12px;
+        font-weight: 400;
+        display: block;
+    }
+
+    .flat-board-action {
+        float: right;
+
+        @media screen and (max-width: $break-sm) {
+            display: none;
+        }
+    }
+}
+
+.flat-board__profile {     
+    background: $whiteMilk;
+    color: $deepGrey;
+    padding: 20px 15px 0 15px;
+    clear: both;
+
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+        margin: 15px auto;
+    }
+
+    .profile-name {
+        font-size: 26px;
+        font-weight: 300;
+        color: $primary-color;
+    }
+
+    .profile-tagline {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        color: $deepGrey;
+    }
+}
+
+/*-flat tab-*/
+.flat-tab-wrapper {
+    display: flex;
+
+    .flat-tab-head {
+        clear: both;
+        padding: 0;
+        display: inline-table;
+        margin-bottom: 0;
+
+        li {
+            float: left;
+            display: inline-block;
+            padding: 8px 16px;
+            border-bottom: 0px solid $primary-color;
+            @include boxsizing(border-box);
+            @include transition();
+
+            &.active-tab {
+                border-bottom: 3px solid $primary-color;
+                @include boxsizing(border-box);
+                @include transition();
+            }
+        }
+    }
+}
+
+.flat-tab-content {
+    padding: 10px 0 0 0;
+    visibility: hidden;
+    position: relative;
+    top: 40px;
+    opacity: 0;
+    @include transition();
+
+    &.active-content-tab {
+        @include transition();
+        opacity: 1;
+        top: 40px;
+    }
+}
+
+.flex-wrapper {
+    display: flex;
+}
+
+.bread-order {
+    display: inline-block;
+    overflow: hidden;
+    clear: both;
+    margin: 0 auto;
+    padding: 0; 
+    background: $white;
+    border: 1px solid $whiteGrain;
+    @include borderbtn(3px);
+
+    li {
+        list-style: none;
+        display: inline-block;
+        float: left;
+        padding: 8px 20px;
+        text-align: center;
+        font-weight: 500;
+        position: relative;
+        letter-spacing: 0.4px;
+
+        &:not(:last-child):not(.current-step) {
+            &::after {
+                border-left: solid $white 16px;
+                border-right: solid transparent 34px;
+                border-bottom: solid transparent 23px;
+                border-top: solid transparent 23px;
+                position: absolute;
+                right: -50px;
+                content: "";
+                top: -3px;
+                bottom: 0;
+                z-index: 12;
+            }
+        }
+
+        &:not(:first-child) {
+            padding: 8px 20px 8px 28px;
+        }
+
+
+
+        &.current-step {
+            background: $primary-color;
+            color: $white;
+
+            &:not(:last-child) {
+                &::after {
+                    border-left: solid $primary-color 16px;
+                    border-right: solid transparent 34px;
+                    border-bottom: solid transparent 23px;
+                    border-top: solid transparent 23px;
+                    position: absolute;
+                    right: -50px;
+                    content: "";
+                    top: -3px;
+                    bottom: 0;
+                    z-index: 12;
+                }
+            }
+
+            span.numeric-step {
+                background: $white;
+                color: $deepGrey;
+                font-weight: 500;
+            }
+        }
+
+        span.numeric-step {
+            color: $grey;
+            display: inline-block; 
+            background: $whiteGrain;
+            padding: 2px 8px;
+            font-weight: 500;
+            margin-right: 10px;
+            @include borderbtn(50%);
+        }
+    }
+}
+
+/*-badge-*/
+
+.badge-dark {
+    display: inline;
+    background: $deepGrey;
+    color: $white;
+    font-weight: 400;
+    padding: 3px;
+    @include boxsizing(border-box);
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 1px, 1px, rgba(0,0,0,.1));
+
+    &.rel {
+        position: relative;
+        left: -4px;
+        top: -4px;
+    }
+}
+
+.badge-interested-wrapper {
+    line-height: 38px;
+
+    .badge-interested {
+        display: inline;
+        background: lighten($primary-color, 40%);
+        color: lighten($primary-color, 10%);
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        padding: 6px 10px;
+        font-weight: bold;
+        margin-right: 5px;
+        white-space: nowrap;
+        font-size: 14px;
+        @include borderbtn(3px);
+
+    }
+}
+
+.badge-accent {
+    display: inline;
+    background: $primary-color;
+    color: $white;
+    font-weight: 400;
+    padding: 6px 8px;
+    @include boxsizing(border-box);
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 1px, 1px, rgba(0,0,0,.1));
+
+    &.rel {
+        position: relative;
+        left: -4px;
+        top: -4px;
+    }
+}
+
+/*-alert-*/
+
+.alert-success {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 4px solid $green !important;
+    background: $white;
+    border: 1px solid $border;
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+}
+
+.alert-warning {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 4px solid $primary-color !important;
+    border: 1px solid $border;
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+}
+
+.alert-danger {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 4px solid $redBoots !important;
+    background: $white;
+    border: 1px solid $border;
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+    @include boxshadowcard(0px, 1px, 2px, rgba(0,0,0,.1));
+}
+
+.alert-info {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 4px solid $blue !important;
+    background: $white;
+    border: 1px solid $border;
+    @include borderbtn(3px);
+    @include boxshadowcard(0px, 2px, 2px, rgba(0,0,0,.1));
+}
+
+/*-style color-*/
+
+.caccent {
+    color: $accent-color;
+}
+
+.cgrey {
+    color: $grey;
+}
+
+.cblack {
+    color: $deepBlack;
+}
+
+.cdeepgrey {
+    color: $deepGrey;
+}
+
+.cwhite {
+    color: $white;
+}
+
+.cblue {
+    color: $blue;
+}
+
+.bcaccent {
+    background-color: $accent-color;
+}
+
+.bcgrey {
+    background-color: $grey;
+}
+
+.bcwhite {
+    background-color: $white;
+}
+
+/*-style font -*/
+
+.fw500 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.fw700 {
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.fw400 {
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+.fw300 {
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+.fw100 {
+    font-weight: 100;
+    letter-spacing: 0.3px;
+}
+
+.text-default {
+    font-size: 14px;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-big {
+    font-size: 16px;
+}
+
+.fz20 {
+    font-size: 20px;
+}
+
+.fz18 {
+    font-size: 18px;
+}
+
+
+.fhel {
+    font-family: helvetica, arial, sans-serif;
+}
+
+.fmont {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*----custom animation---*/
+
+.spinner {
+    margin: 10px auto 0;
+    width: 220px;
+    text-align: center;
+}
+
+.spinner > h3 {
+    margin-top: 10px;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}

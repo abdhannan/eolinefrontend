@@ -1,0 +1,68 @@
+@mixin boxsizing($ask){
+    -webkit-box-sizing: $ask;
+    -ms-box-sizing: $ask;
+    -o-box-sizing: $ask; 
+    -moz-box-sizing: $ask;
+    box-sizing: $ask;
+}
+
+@mixin transitionSpecify($transition){
+    -webkit-transition: $transition 200ms ease-in-out;
+    -moz-transition: $transition 200ms ease-in-out;
+    -ms-transition: $transition 200ms ease-in-out;
+    transition: $transition 200ms ease-in-out; 
+}
+
+
+@mixin transition($transition:all 200ms ease-in-out){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition; 
+}
+
+@mixin transitioncolor($transition:color 200ms ease-in-out){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transitionbgcolor($transition:background-color 200ms ease-in-out){
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+@mixin borderbtn($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+@mixin borderpartial($radiustr, $radiusbr, $radiusbl, $radiustl) {
+    -webkit-border-radius: $radiustr $radiusbr $radiusbl $radiustl;
+    -moz-border-radius: $radiustr $radiusbr $radiusbl $radiustl;
+    -ms-border-radius: $radiustr $radiusbr $radiusbl $radiustl;
+    border-radius: $radiustr $radiusbr $radiusbl $radiustl; 
+}
+
+@mixin boxshadowcard($x, $y, $blur, $almostblack) {
+    -webkit-box-shadow: $x $y $blur $almostblack;
+    -o-box-shadow: $x $y $blur $almostblack;
+    -ms-box-shadow: $x $y $blur $almostblack;
+    -moz-box-shadow: $x $y $blur $almostblack;
+    box-shadow: $x $y $blur $almostblack;
+}
+
+@mixin boxshadowcard__inset($x, $y, $blur, $almostblack) {
+    -webkit-box-shadow: $x $y $blur $almostblack inset;
+    -o-box-shadow: $x $y $blur $almostblack inset;
+    -ms-box-shadow: $x $y $blur $almostblack inset;
+    -moz-box-shadow: $x $y $blur $almostblack inset;
+    box-shadow: $x $y $blur $almostblack inset;
+}
+
